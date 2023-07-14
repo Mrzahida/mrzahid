@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAHID Developer</title>
+    <style>
+ *{
+      padding: 0;
+        margin: 0;
+        }
+body{
+     padding: 0;
+       margin: 0;
+       transition:2s ;
+   }
+
+   .main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+.container{
+    width: 30rem;
+    background-color: rgba(167, 218, 57, 0.679);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 40px;
+    text-align: center;
+}
+button{
+    font-size: 30px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-top: 25px;
+    cursor: pointer;
+    
+}
+
+
+    </style>
+</head>
+<body>
+        <div class="main">
+            <div class="container">
+                <h2 id="color-code">#ffff</h2>
+                <button id="btn">click me </button>
+            </div>
+        </div>
+
+
+
+
+
+    <script>
+ const getcolor = () => {
+            // hex code
+            const randomnumber = Math.floor( Math.random() * 16777215);
+            const randomCode = "#"+randomnumber.toString(16);
+          //  console.log(randomnumber, randomCode); (es se pata cale ga ke # color code console me add huwa ya nahi)
+          document.body.style.background = randomCode;
+          document.getElementById("color-code").innerText = randomCode;
+
+          navigator.clipboard.writeText(randomCode)
+        }
+            // 2 type call this function and background color change 
+        // 1. Event color change
+        document.getElementById("btn").addEventListener(
+            "click",
+            getcolor
+        )
+        //2. init call ; getcolor(); ye function ko call kiya hai es liye take jab page open ya refersh kare to ek backgroundcolor alivible rahe 
+                    getcolor();
+    </script>
+</body>
+</html>
